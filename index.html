@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observatório de Imigração Africana no DF e Entorno</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f2937', // Dark gray for text
+                        secondary: '#f3f4f6', // Light gray for background
+                        accent: '#3b82f6', // Blue for links/buttons
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* High contrast mode */
+        .high-contrast {
+            background-color: #000 !important;
+            color: #fff !important;
+        }
+        .high-contrast a {
+            color: #ffff00 !important; /* Yellow for links */
+        }
+        .high-contrast button {
+            background-color: #fff !important;
+            color: #000 !important;
+            border: 2px solid #fff !important;
+        }
+    </style>
+</head>
+<body class="bg-secondary text-primary font-sans min-h-screen flex flex-col transition-all duration-300">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Observatório de Imigração Africana</h1>
+            <nav class="space-x-4">
+                <a href="#home" class="hover:text-accent">Início</a>
+                <a href="#about" class="hover:text-accent">Sobre</a>
+                <a href="#research" class="hover:text-accent">Pesquisas</a>
+                <a href="#contact" class="hover:text-accent">Contato</a>
+            </nav>
+            <button id="contrast-toggle" class="bg-accent text-white px-4 py-2 rounded hover:bg-blue-700">Modo Alto Contraste</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <section id="home" class="mb-8">
+            <h2 class="text-3xl font-semibold mb-4">Bem-vindo ao Observatório</h2>
+            <p class="text-lg">Este observatório dedica-se ao estudo da imigração africana no Distrito Federal e seu entorno, promovendo análises sociais, dados e discussões na área das ciências sociais.</p>
+        </section>
+
+        <section id="about" class="mb-8">
+            <h2 class="text-3xl font-semibold mb-4">Sobre Nós</h2>
+            <p class="text-lg">Somos uma iniciativa acadêmica focada em monitorar e analisar os fluxos migratórios de populações africanas para o DF e regiões adjacentes. Nossa missão é fornecer insights baseados em evidências para políticas públicas e compreensão social.</p>
+        </section>
+
+        <section id="research" class="mb-8">
+            <h2 class="text-3xl font-semibold mb-4">Pesquisas e Publicações</h2>
+            <ul class="list-disc pl-6 space-y-2">
+                <li>Estudo sobre integração social de imigrantes africanos no Entorno do DF (2023).</li>
+                <li>Análise de dados demográficos de imigração africana (2024).</li>
+                <li>Relatório sobre desafios e oportunidades para comunidades africanas no Brasil Central.</li>
+            </ul>
+        </section>
+
+        <section id="contact" class="mb-8">
+            <h2 class="text-3xl font-semibold mb-4">Contato</h2>
+            <form class="space-y-4">
+                <input type="text" placeholder="Nome" class="w-full p-2 border border-gray-300 rounded">
+                <input type="email" placeholder="Email" class="w-full p-2 border border-gray-300 rounded">
+                <textarea placeholder="Mensagem" class="w-full p-2 border border-gray-300 rounded h-32"></textarea>
+                <button type="submit" class="bg-accent text-white px-4 py-2 rounded hover:bg-blue-700">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-secondary py-4 text-center">
+        <p>&copy; 2025 Observatório de Imigração Africana. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- JavaScript for High Contrast Toggle -->
+    <script>
+        const toggleButton = document.getElementById('contrast-toggle');
+        const body = document.body;
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('high-contrast');
+            if (body.classList.contains('high-contrast')) {
+                toggleButton.textContent = 'Modo Normal';
+            } else {
+                toggleButton.textContent = 'Modo Alto Contraste';
+            }
+        });
+    </script>
+
+</body>
+</html>
